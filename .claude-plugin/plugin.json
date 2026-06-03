@@ -1,0 +1,12 @@
+{
+  "name": "ai-edu-skills",
+  "skills": [
+    "./skills/core/learning-loop",
+    "./skills/learn/socratic-tutor",
+    "./skills/critical-thinking/argument-debugger",
+    "./skills/memory/mnemonic-builder",
+    "./skills/lbd/teach-back",
+    "./skills/research/ontology-builder",
+    "./skills/educator/misconception-detector"
+  ]
+}
