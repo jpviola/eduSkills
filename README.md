@@ -1,96 +1,116 @@
 # AI Skills for Real Educators 🍎
 
-Un sistema de habilidades cognitivas y pedagógicas reutilizables para enseñar, aprender y desarrollar pensamiento crítico con IA.
+A reusable library of cognitive and pedagogical skills for teaching, learning, and critical thinking with AI.
 
-Este repositorio está inspirado en el trabajo de [Matt Pocock](https://github.com/mattpocock/skills), pero trasladado del ámbito de la ingeniería de software al ámbito de la **innovación educativa y las humanidades**.
+eduSkills is an open collection of structured skill definitions — each a standalone instruction set that transforms any AI into a specialized cognitive tutor. Skills are designed to be copied into system prompts, extended, remixed, and contributed back by the community.
 
-## La Filosofía: Producir Conocimiento, no solo Código
+→ Want a full CLI experience? See Musa.
 
-La mayoría de las interacciones con la IA hoy en día son transaccionales: "hazme esto", "resúmeme aquello". **AI Edu-Skills** cambia el paradigma. Aquí, la IA no es una herramienta de producción, sino un **tutor cognitivo** que guía procesos de aprendizaje profundo.
+What is a skill?
+Each skill is a SKILL.md file containing:
 
-Las skills no se organizan por contenidos (Filosofía, Historia, Biología), sino por **procesos cognitivos transferibles**. Un alumno de Medicina y uno de Derecho necesitan, en el fondo, las mismas habilidades: comprender, memorizar, argumentar e investigar.
+A philosophy — the cognitive principle behind the skill
+Instructions for the AI — explicit behavioral rules
+Activation syntax — how to invoke it (e.g. /socratic-tutor [topic])
+Examples — real usage prompts
+Skills are not content-area specific. They are transferable cognitive processes — a medical student and a law student need the same foundational capacities: to argue, to memorize, to research, to teach.
 
-## Taxonomía Edu-Skills
+Skill families
+🧠 Learn
+Deep understanding through dialogue and concept construction.
 
-El sistema se organiza en 6 grandes familias de procesos:
+Skill	What it does
+/socratic-tutor	Extracts knowledge through questions — never gives direct answers
+⚖️ Critical Thinking
+Rigorous analysis and logical reasoning.
 
-### 1. [Learn Skills](./skills/learn/) 🧠
-Para la comprensión profunda y la construcción de conceptos.
-- `/socratic-tutor`: Aprender mediante preguntas.
-- `/concept-builder`: Construcción progresiva.
-- `/analogy-generator`: Aprender mediante analogías.
-- `/first-principles`: Descomposición conceptual.
+Skill	What it does
+/argument-debugger	Detects fallacies, hidden premises, and evaluates argument soundness
+🏛️ Memory
+Long-term retention through narrative and imagery.
 
-### 2. [Critical Thinking Skills](./skills/critical-thinking/) ⚖️
-Para el análisis riguroso y la detección de sesgos.
-- `/argument-debugger`: Linter de lógica y falacias.
-- `/steelman-builder`: Reconstrucción de la mejor versión de una postura.
-- `/dialectical-thinking`: Tesis, objeción y síntesis.
-- `/assumption-hunter`: Búsqueda de presupuestos invisibles.
+Skill	What it does
+/mnemonic-builder	Turns any list into acronyms, vivid images, and memory palace routes
+🛠️ Learning by Doing
+Active learning through creation and teaching.
 
-### 3. [Memory Skills](./skills/memory/) 🏛️
-Para la retención a largo plazo.
-- `/mnemonic-builder`: Acrónimos, historias e imágenes.
-- `/spaced-review`: Generación de repasos espaciados.
-- `/active-recall`: Recuperación activa de información.
-- `/memory-palace`: Construcción de recorridos espaciales.
+Skill	What it does
+/teach-back	You teach — the AI plays student and asks questions that reveal gaps
+🔍 Research
+Knowledge management and concept extraction.
 
-### 4. [Learning By Doing (LBD) Skills](./skills/lbd/) 🛠️
-Para el aprendizaje activo mediante la creación.
-- `/essay-writer`: Tutor editorial para ensayos.
-- `/teach-back`: La técnica Feynman (explicar para aprender).
-- `/debate-simulator`: Simulación de posturas opuestas.
-- `/project-builder`: Descomposición de proyectos en entregables.
+Skill	What it does
+/ontology-builder	Extracts concept graphs, hierarchies, and Mermaid diagrams from any text
+🎓 Educator
+Tools specifically for teachers and instructional designers.
 
-### 5. [Research Skills](./skills/research/) 🔍
-Para la investigación y gestión del conocimiento.
-- `/source-critic`: Evaluación de fuentes.
-- `/ontology-builder`: Extracción de grafos de conocimiento.
-- `/synthesis-engine`: Integración de múltiples fuentes.
+Skill	What it does
+/misconception-detector	Predicts common conceptual errors before students develop them
+♻️ Core
+The master skill that orchestrates everything.
 
-### 6. [Educator Skills](./skills/educator/) 🎓
-Específicamente para docentes y diseñadores instruccionales.
-- `/misconception-detector`: Detección de errores frecuentes.
-- `/rubric-builder`: Construcción de criterios de evaluación.
-- `/curriculum-designer`: Diseño de programas alineados.
+Skill	What it does
+/learning-loop	Full D-U-P-R-T-M cycle: Diagnose → Understand → Practice → Reflect → Teach → Master
+How to use a skill
+Option 1 — Copy into a system prompt
+Open any SKILL.md file and paste its content as the system prompt in Claude, ChatGPT, or any other AI interface. Then activate it with the command syntax at the top of the file.
 
----
+/socratic-tutor What is justice?
+Option 2 — Use the Musa CLI
+npm install -g musa-cli
+musa chat socratic-tutor
+Option 3 — Link to Claude Desktop
+musa link
+Pedagogical guardrails
+All skills enforce these constraints by design:
 
-## La Skill Maestra: [Learning Loop](./skills/core/learning-loop/) ♻️
+No ghostwriting — AI assists but never produces essays, papers, or exams for the user
+No answer injection — solutions are never given directly; the learner discovers them
+No cycle bypass — diagnostic and practice phases cannot be skipped due to "urgency"
+No oversimplification — analogies maintain technical and conceptual precision
+No passive compliance — the AI respectfully challenges faulty reasoning
+Skill structure
+skills/
+  <category>/
+    <skill-name>/
+      SKILL.md      ← the skill definition
+Each SKILL.md follows this template:
 
-Si quieres experimentar el sistema completo, usa `/learning-loop [tema]`. Esta skill orquestará un ciclo pedagógico completo:
-1. **Diagnóstico** de conocimientos previos.
-2. **Comprensión** del concepto.
-3. **Práctica** aplicada.
-4. **Reflexión** sobre el proceso.
-5. **Enseñanza** (Teach-back).
-6. **Dominio** (Mastery).---
+# Skill: [Name]
 
-## 🏛️ CLI: Musa
+## Philosophy
+[The cognitive principle behind this skill]
 
-Hemos creado una herramienta de línea de comandos para gestionar tus habilidades pedagógicas bajo la marca **Musa**, la inspiración para los educadores.
+## Instructions for the AI
+When `/skill-name [topic]` is activated:
+1. [Behavioral rule 1]
+2. [Behavioral rule 2]
+...
 
-### Instalación local
-Desde la raíz del repositorio:
-```bash
-npm install
-npm link
-```
+## Activation
+`/skill-name [topic or question]`
 
-### Comandos disponibles
-- `musa list`: Muestra todas las habilidades organizadas por procesos cognitivos con el logo de Musa.
-- `musa explain /nombre-skill`: Accede a la sabiduría de Musa sobre una habilidad específica.
-- `musa config`: Configura tu proveedor de IA (OpenAI, Anthropic, Groq, Ollama) y tu API Key.
-- `musa chat /nombre-skill`: Inicia una sesión de aprendizaje interactiva directamente en la terminal usando tu proveedor preferido.
-- `musa link`: Invoca y enlaza las habilidades con tu cliente de Claude (Desktop/CLI).
+## Examples
+- `/skill-name [example 1]`
+- `/skill-name [example 2]`
+Contributing
+New skills are welcome. To propose one:
 
----
+Fork this repository
+Create a new directory: skills/<category>/<your-skill-name>/
+Add a SKILL.md following the template above
+Open a pull request with a short description of the cognitive process it addresses
+Good skill candidates:
 
-## Cómo usar este repo
+A specific cognitive capacity not yet covered
+A variation on an existing skill for a different audience (e.g. /socratic-tutor for children)
+A discipline-specific adaptation of a general skill
+Not a good fit:
 
-1. **Copia y pega** el contenido de una `SKILL.md` en tu sistema de instrucciones (System Prompt) o úsalo directamente en un chat con Claude/ChatGPT.
-2. **Adapta** las instrucciones a tus necesidades específicas.
-3. **Contribuye** creando nuevas skills que sigan esta filosofía pedagógica.
+Content-specific skills (e.g. "explain photosynthesis") — skills must be transferable
+Skills that encourage ghostwriting or bypass learning
+Inspiration
+This project is inspired by Matt Pocock's skills framework, translated from software engineering into the domain of education and the humanities.
 
----
-*Desarrollado para Real Educators que buscan en la IA un aliado para la excelencia intelectual.*
+License
+MIT — Juan Pablo Viola, 2026.
