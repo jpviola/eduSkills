@@ -80,7 +80,9 @@ npm link
 ### Comandos disponibles
 - `musa list`: Muestra todas las habilidades organizadas por procesos cognitivos con el logo de Musa.
 - `musa explain /nombre-skill`: Accede a la sabiduría de Musa sobre una habilidad específica.
-- `musa link`: Invoca y enlaza las habilidades con tu cliente de Claude.
+- `musa config`: Configura tu proveedor de IA (OpenAI, Anthropic, Groq, Ollama) y tu API Key.
+- `musa chat /nombre-skill`: Inicia una sesión de aprendizaje interactiva directamente en la terminal usando tu proveedor preferido.
+- `musa link`: Invoca y enlaza las habilidades con tu cliente de Claude (Desktop/CLI).
 
 ---
 
