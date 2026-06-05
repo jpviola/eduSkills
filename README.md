@@ -172,10 +172,3 @@ This project is inspired by [Matt Pocock's skills framework](https://github.com/
 ## License
 
 MIT — Juan Pablo Viola, 2026.
-
-Skills that encourage ghostwriting or bypass learning
-Inspiration
-This project is inspired by Matt Pocock's skills framework, translated from software engineering into the domain of education and the humanities.
-
-License
-MIT — Juan Pablo Viola, 2026.
