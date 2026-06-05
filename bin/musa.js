@@ -13,9 +13,18 @@ import os from 'os';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const program = new Command();
 
+const MUSA_LOGO = chalk.bold.magenta(`
+   __  __ _    _  _____         
+  |  \\/  | |  | |/ ____|  /\\    
+  | \\  / | |  | | (___   /  \\   
+  | |\\/| | |  | |\\___ \\ / /\\ \\  
+  | |  | | |__| |____) / ____ \\ 
+  |_|  |_|\\____/|_____/_/    \\_\\
+`);
+
 program
-  .name('edu-skills')
-  .description('CLI para gestionar AI Edu-Skills para Real Educators')
+  .name('musa')
+  .description('Musa CLI: La inspiración para Real Educators')
   .version('1.0.0');
 
 // Comando: list
@@ -23,7 +32,8 @@ program
   .command('list')
   .description('Lista todas las skills disponibles organizadas por categoría')
   .action(async () => {
-    console.log(chalk.bold.cyan('\n🍎 AI Edu-Skills Disponibles:\n'));
+    console.log(MUSA_LOGO);
+    console.log(chalk.bold.cyan('📜 Habilidades cognitivas disponibles:\n'));
     
     const skillsPath = path.join(process.cwd(), 'skills');
     const categories = await fs.readdir(skillsPath);
@@ -55,18 +65,17 @@ program
     const cleanName = skillName.startsWith('/') ? skillName.slice(1) : skillName;
     const skillsPath = path.join(process.cwd(), 'skills');
     
-    // Buscar la skill en todas las subcarpetas
     const files = await globby(`skills/**/${cleanName}/SKILL.md`);
     
     if (files.length === 0) {
-      console.log(chalk.red(`\n❌ Error: No se encontró la skill "/${cleanName}"`));
+      console.log(chalk.red(`\n❌ Musa no encuentra la habilidad "/${cleanName}"`));
       return;
     }
 
     const content = await fs.readFile(files[0], 'utf-8');
-    console.log(`\n${chalk.bold.blue('--- Información de la Skill ---')}\n`);
+    console.log(`\n${chalk.bold.magenta('--- Sabiduría de Musa ---')}\n`);
     console.log(content);
-    console.log(`\n${chalk.bold.blue('------------------------------')}\n`);
+    console.log(`\n${chalk.bold.magenta('-------------------------')}\n`);
   });
 
 // Comando: link
@@ -74,7 +83,7 @@ program
   .command('link')
   .description('Enlaza las skills con Claude Desktop/CLI')
   .action(() => {
-    console.log(chalk.blue('\n🔗 Enlazando skills con Claude...'));
+    console.log(chalk.magenta('\n✨ Musa está invocando las habilidades en Claude...'));
     try {
       const isWindows = process.platform === 'win32';
       const scriptPath = isWindows 
@@ -86,9 +95,9 @@ program
       } else {
         execSync(`bash "${scriptPath}"`, { stdio: 'inherit' });
       }
-      console.log(chalk.green('\n✅ Skills enlazadas correctamente.'));
+      console.log(chalk.green('\n✅ Habilidades enlazadas. La inspiración fluye.'));
     } catch (error) {
-      console.log(chalk.red(`\n❌ Error al enlazar skills: ${error.message}`));
+      console.log(chalk.red(`\n❌ Error en la invocación: ${error.message}`));
     }
   });
 

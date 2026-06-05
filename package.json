@@ -15,7 +15,7 @@
   "license": "ISC",
   "type": "module",
   "bin": {
-    "edu-skills": "./bin/edu-skills.js"
+    "musa": "./bin/musa.js"
   },
   "bugs": {
     "url": "https://github.com/jpviola/eduSkills/issues"
