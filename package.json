@@ -1,0 +1,29 @@
+{
+  "name": "ai-for-real-educators",
+  "version": "1.0.0",
+  "description": "Un sistema de habilidades cognitivas y pedagógicas reutilizables para enseñar, aprender y desarrollar pensamiento crítico con IA.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jpviola/eduSkills.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bin": {
+    "edu-skills": "./bin/edu-skills.js"
+  },
+  "bugs": {
+    "url": "https://github.com/jpviola/eduSkills/issues"
+  },
+  "homepage": "https://github.com/jpviola/eduSkills#readme",
+  "dependencies": {
+    "chalk": "^5.6.2",
+    "commander": "^15.0.0",
+    "globby": "^11.1.0"
+  }
+}

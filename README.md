@@ -64,7 +64,25 @@ Si quieres experimentar el sistema completo, usa `/learning-loop [tema]`. Esta s
 3. **Práctica** aplicada.
 4. **Reflexión** sobre el proceso.
 5. **Enseñanza** (Teach-back).
-6. **Dominio** (Mastery).
+6. **Dominio** (Mastery).---
+
+## 🛠️ CLI: edu-skills
+
+Hemos creado una herramienta de línea de comandos para gestionar tus habilidades pedagógicas de forma sencilla.
+
+### Instalación local
+Desde la raíz del repositorio:
+```bash
+npm install
+npm link
+```
+
+### Comandos disponibles
+- `edu-skills list`: Muestra todas las habilidades organizadas por procesos cognitivos.
+- `edu-skills explain /nombre-skill`: Muestra la filosofía y las instrucciones detalladas de una habilidad.
+- `edu-skills link`: Enlaza automáticamente todas las habilidades con tu cliente de Claude (Desktop o CLI).
+
+---
 
 ## Cómo usar este repo
 
