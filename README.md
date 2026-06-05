@@ -1,4 +1,4 @@
-# AI Skills for Real Educators 🍎
+# eduSkills
 
 **A reusable library of cognitive and pedagogical skills for teaching, learning, and critical thinking with AI.**
 

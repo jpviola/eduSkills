@@ -1,3 +1,11 @@
-node_modules
-.musa-config.json
+node_modules/
+bin/
+web/
 .env
+.musa-config.json
+package.json
+package-lock.json
+scripts/
+dist/
+.DS_Store
+Thumbs.db
