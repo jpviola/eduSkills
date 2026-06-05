@@ -81,9 +81,9 @@ function App() {
   };
 
   return (
-    <div className="flex h-screen bg-hermes-bg font-sans text-hermes-text">
+    <div className="flex h-full bg-hermes-bg font-sans text-hermes-text">
       {/* Sidebar */}
-      <div className="w-72 bg-white border-r border-neutral-200 flex flex-col">
+      <div className="w-72 flex-shrink-0 bg-white border-r border-neutral-200 flex flex-col">
         <div className="p-6 border-b border-neutral-100 flex items-center gap-3">
           <div className="bg-musa-500 p-2 rounded-xl text-white">
             <Sparkles size={24} />
